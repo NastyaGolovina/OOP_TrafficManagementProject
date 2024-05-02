@@ -1,6 +1,5 @@
 package oOP_TrafficManagementProject;
 
-import java.lang.FdLibm.Pow;
 import java.util.ArrayList;
 
 public class RoadLinkedToCrossRoad {
@@ -20,14 +19,13 @@ public class RoadLinkedToCrossRoad {
 	}
 	
 	
-	
 	/**
 	 * @return the road
 	 */
 	public Road getRoad() {
 		return road;
 	}
-
+	
 	enum LineDirection {
 		leftToRight,rightToLeft;
 		
@@ -42,7 +40,16 @@ public class RoadLinkedToCrossRoad {
 			}
 		}
 	}
-
+	
+	/**
+	 * add new vehicle in given line
+	 * @param direction
+	 * @param vehicle
+	 */
+	public void addVehicleInLine(LineDirection direction, Vehicle vehicle) {
+		direction.getArray().add(vehicle);
+	}
+	
 	/**
 	 * get the value of min acceleration in line
 	 * @param direction
@@ -59,7 +66,7 @@ public class RoadLinkedToCrossRoad {
 		return minAcceleration;
 	}
 	/**
-	 * 
+	 * calculate distance
 	 * @param direction
 	 * @param road
 	 * @return totalDistance 
@@ -72,6 +79,12 @@ public class RoadLinkedToCrossRoad {
 		return totalDistance;
 	}
 	
+	/**
+	 * calculate duration
+	 * @param direction
+	 * @param road
+	 * @return duration 
+	 */
 	public double durationCalculation(LineDirection direction, RoadLinkedToCrossRoad road) {
 		double time = 0;
 		double timeZeroToMax = this.getRoad().getMunicipality().getMaxSpeed() /  minAcceleration(direction);
@@ -82,7 +95,23 @@ public class RoadLinkedToCrossRoad {
 		} else if (totalDistance > accelerationDistance) {
 			time = timeZeroToMax +  ((totalDistance-accelerationDistance)/this.getRoad().getMunicipality().getMaxSpeed());
 		} else if (totalDistance < accelerationDistance) {
-			time = timeZeroToMax +  ((totalDistance-accelerationDistance)/this.getRoad().getMunicipality().getMaxSpeed());
+			time = Math.sqrt(totalDistance/(0.5* minAcceleration(direction)));
+		}
+		return time;
+		}
+	
+	/**
+	 * return max value of time in given road
+	 * @param opositeRoad
+	 * @return the max value of time in given road
+	 */
+	public double returnMaxTime(RoadLinkedToCrossRoad opositeRoad) {
+		double tLeftToRight = durationCalculation(LineDirection.leftToRight, opositeRoad);
+		double tRightToLeft = durationCalculation(LineDirection.rightToLeft, opositeRoad);
+		if (tLeftToRight > tRightToLeft) {
+			return tLeftToRight;
+		} else {
+			return tRightToLeft;
 		}
 	}
 }
