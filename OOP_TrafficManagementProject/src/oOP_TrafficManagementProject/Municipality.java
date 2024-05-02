@@ -46,9 +46,6 @@ public class Municipality {
 		return CrossRoadList;
 		
 	}
-	// Setter method 
-	
-	// static void setName()
 	
 	
 	
