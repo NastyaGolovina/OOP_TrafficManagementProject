@@ -48,7 +48,7 @@ public class Municipality {
 	}
 	// Setter method 
 	
-	public static void setName()
+	// static void setName()
 	
 	
 	
