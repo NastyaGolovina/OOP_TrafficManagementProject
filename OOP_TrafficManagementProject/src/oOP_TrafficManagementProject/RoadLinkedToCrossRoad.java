@@ -114,4 +114,14 @@ public class RoadLinkedToCrossRoad {
 			return tRightToLeft;
 		}
 	}
+
+
+	/**
+	 * display road info
+	 */
+	public void display() {
+		System.out.println(road);;
+	}
+	
+	
 }
