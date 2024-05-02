@@ -5,6 +5,7 @@ public class Road {
 	private String roadID;
 	private String roadName;
 	private Municipality municipality;
+	private double width;
 	
 	// Class variable
 	private static int numberOfLines = 2;
@@ -13,11 +14,13 @@ public class Road {
 	 * @param roadID
 	 * @param roadName
 	 * @param municipality
+	 * @param width
 	 */
-	public Road(String roadID, String roadName, Municipality municipality) {
+	public Road(String roadID, String roadName, Municipality municipality, double width) {
 		this.roadID = roadID;
 		this.roadName = roadName;
 		this.municipality = municipality;
+		this.width = width;
 	}
 
 	/**
@@ -63,6 +66,20 @@ public class Road {
 	}
 
 	/**
+	 * @return the width
+	 */
+	public double getWidth() {
+		return width;
+	}
+
+	/**
+	 * @param width the width to set
+	 */
+	public void setWidth(double width) {
+		this.width = width;
+	}
+
+	/**
 	 * @return the numberOfLines
 	 */
 	public static int getNumberOfLines() {
@@ -75,6 +92,13 @@ public class Road {
 	public static void setNumberOfLines(int numberOfLines) {
 		Road.numberOfLines = numberOfLines;
 	}
+
+	@Override
+	public String toString() {
+		return "Road [roadID=" + roadID + ", roadName=" + roadName + ", municipality=" + municipality + ", width="
+				+ width + "]";
+	}
+
 	
 	
 }
