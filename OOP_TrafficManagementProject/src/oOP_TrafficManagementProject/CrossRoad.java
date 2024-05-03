@@ -1,5 +1,4 @@
 package oOP_TrafficManagementProject;
-import java.util.ArrayList;
 
 public class CrossRoad {
 
