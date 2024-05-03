@@ -1,19 +1,5 @@
-<<<<<<< HEAD
 package oOP_TrafficManagementProject;
-
-public class CrossRoad {
-
-	public CrossRoad() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
-=======
-package oOP_TrafficManagementProject;
-
 import java.util.ArrayList;
-
-import oOP_TrafficManagementProject.RoadLinkedToCrossRoad.LineDirection;
 
 public class CrossRoad {
 
@@ -150,4 +136,4 @@ public class CrossRoad {
 //		
 //	}
 }
->>>>>>> branch 'master' of https://github.com/NastyaGolovina/OOP_TrafficManagementProject.git
+
