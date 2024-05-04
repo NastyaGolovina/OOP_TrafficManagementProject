@@ -114,8 +114,15 @@ public class Municipality {
 		
 		//search for driver
 		 
-		
-		
+		// Lyly, this is an example of search method. Try to do like this, but with your  var.
+//		 int i = 0;
+//	        while ( i < clientsList.size() && !clientsList.get(i).getClienteCode().equalsIgnoreCase(Code)) {
+//	            i++;
+//	        }
+//	        if ( i != clientsList.size()) {
+//	            return i;
+//	        }
+//	        return -1;
 		 
 		 
 	}
