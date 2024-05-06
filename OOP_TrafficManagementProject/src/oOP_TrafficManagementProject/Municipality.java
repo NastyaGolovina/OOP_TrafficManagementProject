@@ -92,28 +92,79 @@ public class Municipality {
 	// search for vehicle by licensePlate
 	// return vehicle position if existed or -1 not existed
 	
-	public int searchVehicle(String LicensePlate)
-	// LicensePlate here is as argument which passed to a method, 
-	// Representing the "LicensePlate" of the vehicle which being searched for
-	{
-		int i = 0;
-		
-		//Dòng này bắt đầu một vòng lặp for-each loop that iterates over each Vehicle object in VehicleList,ArrayList. 
-		//Vòng lặp lặp qua từng phương tiện trong danh sách.
-		// The loop iterates through each vehicle in the list.
-		
-		for(Vehicle vehicle : VehicleList);
-		 if(vehicle.getLicensePlate().equals(LicensePlate)) {
-//Within the loop, this line retrieves the license plate of the current Vehicle object (vehicle) using the getLicensePlate() method. 
-//It then compares this license plate with the LicensePlate variable using the equals() method.
-			 return i; // found the vehicle
-	        } else {
-	    
-	    return -1; //vehicle not found
-		 }
 		
 		//search for driver
+		 public int searchVehicle(String licensePlate) {
+			 int i = 0;
+			   while (i< VehicleList.size() && !VehicleList.get(i).getLicensePlate().equalsIgnoreCase(licensePlate)) {
+				   i ++;
+			   }
+			   if (i != VehicleList.size() ) {
+				   return i; 
+			   }				 
+	           return -1;
+		 }
 		 
+	 /* *if (i != VehicleList.size()): This condition checks if the variable i is not equal to the size of the VehicleList. 
+	  * If i is equal to the size of VehicleList, it means the loop iterated through the entire list without finding a matching license plate.
+        return i;: 
+        If a matching license plate was found during the loop (i.e., i is not equal to the size of VehicleList), this line returns the index (i) where the matching license plate was found in the list.
+        return -1;
+        If no matching license plate was found in the list (i.e., i is equal to the size of VehicleList), this line returns -1 to indicate that no match was found.
+	   */
+		 
+		 
+		 // search Driver
+		 public int searchDriver(String driverID) {
+			    int i = 0;
+			    while (i < VehicleList.size() && !VehicleList.get(i).getDriver().getDriverID().equalsIgnoreCase(driverID)) {
+			        i++;
+			    }
+			    if (i != VehicleList.size()) {
+			        return i; // Driver found
+			    }
+			    return -1; // Driver not found
+			}
+
+		 // search Road
+		 public int searchRoad( String roadId) {
+			 int i = 0;
+			 while (i < RoadList.size() && !RoadList.get(i).getRoadId().equalsIgnoreCase(roadId)){
+				 i++;
+			 }
+			 if ( i != RoadList.size()) {
+				 return i;
+			 }
+			 return -1;
+		 }
+	           
+		//searchCrossRoad
+		 public int searchCrossRoad( String crossRoadId) {
+			 int i = 0;
+			 while (i < CrossRoadList.size() && !CrossRoadList.get(i).getCrossRoadId().equalsIgnoreCase(crossRoadId)){
+				 i++;
+			 }
+			 if ( i != CrossRoadList.size()) {
+				 return i;
+			 }
+			 return -1;
+		 } 
+	           
+	           
+	           
+	           
+	           
+	           
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		// Lyly, this is an example of search method. Try to do like this, but with your  var.
 //		 int i = 0;
 //	        while ( i < clientsList.size() && !clientsList.get(i).getClienteCode().equalsIgnoreCase(Code)) {
@@ -138,4 +189,4 @@ public class Municipality {
 	
 	
 	
-}
+
