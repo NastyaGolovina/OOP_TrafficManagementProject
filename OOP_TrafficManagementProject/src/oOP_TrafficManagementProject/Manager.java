@@ -10,7 +10,18 @@ public class Manager {
 	
 	
 	
-	
+	/**
+	 * add vehicle
+	 */
+//	public void addNewVehicle() {
+//		String driverID = Main.inputStr("Input driver ID : ");
+//		int drivePos = municipality.searchDriver(driverID);
+//		if(drivePos == -1) {
+//			// create driver
+//		} else {
+//			// take driver
+//		}
+//	}
 	/**
 	 * add vehicle in queue
 	 */

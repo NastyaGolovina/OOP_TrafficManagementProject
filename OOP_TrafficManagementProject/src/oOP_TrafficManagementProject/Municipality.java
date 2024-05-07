@@ -51,7 +51,9 @@ public class Municipality {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+	/**
+	 * @param maxSpeed
+	 */
 	public void setMaxSpeed(double maxSpeed) {
 		this.maxSpeed = maxSpeed;
 		
@@ -129,7 +131,7 @@ public class Municipality {
 		 // search Road
 		 public int searchRoad( String roadId) {
 			 int i = 0;
-			 while (i < RoadList.size() && !RoadList.get(i).getRoadId().equalsIgnoreCase(roadId)){
+			 while (i < RoadList.size() && !RoadList.get(i).getRoadID().equalsIgnoreCase(roadId)){
 				 i++;
 			 }
 			 if ( i != RoadList.size()) {
