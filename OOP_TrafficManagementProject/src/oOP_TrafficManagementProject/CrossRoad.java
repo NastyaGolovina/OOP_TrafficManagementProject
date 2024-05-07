@@ -113,13 +113,19 @@ public class CrossRoad {
 		this.horisontalTrafficLight = horisontalTrafficLight;
 	}
 	
-	enum Direction {
-		verticle,horisontal;
+	@Override
+	public String toString() {
+		return "CrossRoad [crossRoadId=" + crossRoadId + "]";
 	}
+
+//	enum Direction {
+//		verticle,horisontal;
+//	}
 	/**
 	 *  determine the road and green light time
 	 */
 	public void printTheRoadAndGreenLightTime() {
+		System.out.println(this);
 		double tVerticle = verticleRoad.returnMaxTime(horisontalRoad);
 		double tHorisontal = horisontalRoad.returnMaxTime(verticleRoad);
 		if (tVerticle > tHorisontal) {
@@ -130,9 +136,39 @@ public class CrossRoad {
 			System.out.println("Green light time : " + tHorisontal + " s ");
 		}
 	}
+	/**
+	 * Print types of roads
+	 */
+	public void printRoadDeteils() {
+		System.out.print("(1) - " + verticleRoad);
+		System.out.print("(2) - " + horisontalRoad);
+	}
 	
-	//	public void addVheicleToQueue(LineDirection direction, ) {
-	//		
-	//	}
+	/** message conclusion about direction
+	 * 
+	 */
+	public void printDirectionDeteils() {
+		System.out.print("(1) - west-east");
+		System.out.print("(2) - east-west");
+	}
+	/**
+	 * add given vehicle to queue
+	 * @param direction
+	 * @param vehicle
+	 * @param road
+	 */
+	public void addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection direction, Vehicle vehicle, int road ) {
+			switch (road) {
+			case 1:
+				verticleRoad.addVehicleInLine(direction, vehicle);
+				break;
+			case 2:
+				horisontalRoad.addVehicleInLine(direction, vehicle);
+				break;
+			default:
+				System.out.println("Invalid request");
+				break;
+			}
+	}
 }
 

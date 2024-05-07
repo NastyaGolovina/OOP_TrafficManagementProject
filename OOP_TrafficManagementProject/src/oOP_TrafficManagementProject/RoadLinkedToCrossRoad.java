@@ -41,6 +41,13 @@ public class RoadLinkedToCrossRoad {
 		}
 	}
 	
+	
+	@Override
+	public String toString() {
+		return  road.toString();
+	}
+
+
 	/**
 	 * add new vehicle in given line
 	 * @param direction
