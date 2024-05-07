@@ -158,17 +158,14 @@ public class CrossRoad {
 	 * @param road
 	 */
 	public void addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection direction, Vehicle vehicle, int road ) {
-			switch (road) {
-			case 1:
-				verticleRoad.addVehicleInLine(direction, vehicle);
-				break;
-			case 2:
-				horisontalRoad.addVehicleInLine(direction, vehicle);
-				break;
-			default:
-				System.out.println("Invalid request");
-				break;
-			}
+		switch (road) {
+		case 1:
+			verticleRoad.addVehicleInLine(direction, vehicle);
+			break;
+		case 2:
+			horisontalRoad.addVehicleInLine(direction, vehicle);
+			break;
+		}
 	}
 }
 
