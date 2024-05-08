@@ -10,9 +10,13 @@ public class Municipality {
 	private ArrayList<Road> RoadList ; // RoadList
 	private ArrayList<CrossRoad> CrossRoadList; // CrossRoadList
 	
-
+	/**
+	 * 
+	 * @param name
+	 * @param maxSpeed
+	 * @param averageDistanceBetweenCars
+	 */
 	public Municipality (String name, double maxSpeed, double averageDistanceBetweenCars) {
-		// TODO Auto-generated constructor stub
       this.name = name;
       this.maxSpeed = maxSpeed;
       this.averageDistanceBetweenCars = averageDistanceBetweenCars;

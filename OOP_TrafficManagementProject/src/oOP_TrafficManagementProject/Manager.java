@@ -7,21 +7,37 @@ public class Manager {
 		municipality = new Municipality (name, maxSpeed, averageDistanceBetweenCars);
 	}
 	
-	
-	
+	//The addCrossRoad() and addRoad() methods can be done in a similar manner as my methods below
 	
 	/**
 	 * add vehicle
 	 */
-//	public void addNewVehicle() {
-//		String driverID = Main.inputStr("Input driver ID : ");
-//		int drivePos = municipality.searchDriver(driverID);
-//		if(drivePos == -1) {
-//			// create driver
-//		} else {
-//			// take driver
-//		}
-//	}
+	public void addNewVehicle() {
+		String driverID = Main.inputStr("Input driver ID : ");
+		int drivePos = municipality.searchDriver(driverID);
+		Driver newDriver ;
+		if(drivePos == -1) {
+			String driverName =  Main.inputStr("Input driver name : ");
+			String driverLicense = Main.inputStr("Input driver license : ");
+			String driverEmail = Main.inputStr("Input driver email : ");
+			String driverPhone = Main.inputStr("Input driver phone : ");
+			newDriver = new Driver(driverID,driverName,driverLicense,driverEmail,driverPhone);
+		} else {
+			newDriver = municipality.getVehicleList().get(drivePos).getDriver();
+		}
+		String licensePlate = Main.inputStr("Input license plate : ");
+		int vehiclePos = municipality.searchVehicle(licensePlate);
+		if(vehiclePos == -1) {
+			String carModel = Main.inputStr("Input car model : ");
+			double length = Main.inputDouble("Input car length : ");
+			double width = Main.inputDouble("Input car width : ");
+			double zeroTo100 = Main.inputDouble("Input car 0 to 100 rate : ");
+			municipality.addVehicle(new Vehicle(licensePlate,carModel,length,width,zeroTo100,newDriver));
+		} else {
+			System.out.println("Vehicle already exist");
+		}
+	}
+	
 	/**
 	 * add vehicle in queue
 	 */
