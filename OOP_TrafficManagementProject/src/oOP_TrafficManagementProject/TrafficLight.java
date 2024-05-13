@@ -27,6 +27,7 @@ public class TrafficLight {
 	}
 	
 	/**
+	 * @param trafficLightId
 	 *  Setter method
 	 */
 	public void setTrafficLightId (int trafficLightId) {
