@@ -7,7 +7,7 @@ public class Manager {
 		municipality = new Municipality (name, maxSpeed, averageDistanceBetweenCars);
 	}
 	
-	//The addCrossRoad() and addRoad() methods can be done in a similar manner as my methods below
+	//The addCrossRoad() and methods can be done in a similar manner as my methods below
 	
 	/**
 	 * addRoad()
