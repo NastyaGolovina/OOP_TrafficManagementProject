@@ -10,6 +10,19 @@ public class Manager {
 	//The addCrossRoad() and addRoad() methods can be done in a similar manner as my methods below
 	
 	/**
+	 * addRoad()
+	 */
+	public void addRoad() {
+		String roadID = Main.inputStr("Input road ID : ");
+		int roadPos = municipality.searchRoad(roadID);
+		if(roadPos != -1) {
+			municipality.addRoad(new Road(roadID, Main.inputStr("Input road name : "), municipality ,
+					Main.inputDouble("Input road width : ")));
+		} else {
+			System.out.println("Vehicle already exist");
+		}
+	}
+	/**
 	 * add vehicle
 	 */
 	public void addNewVehicle() {
