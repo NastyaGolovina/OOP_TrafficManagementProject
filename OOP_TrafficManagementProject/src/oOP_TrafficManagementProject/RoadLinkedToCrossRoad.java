@@ -53,7 +53,7 @@ public class RoadLinkedToCrossRoad {
 	 * @param direction
 	 * @param vehicle
 	 */
-	public void addVehicleInLine(LineDirection direction, Vehicle vehicle) {
+	public void addVehicleInQueue(LineDirection direction, Vehicle vehicle) {
 		direction.getArray().add(vehicle);
 	}
 	

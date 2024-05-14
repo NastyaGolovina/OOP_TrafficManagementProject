@@ -160,10 +160,10 @@ public class CrossRoad {
 	public void addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection direction, Vehicle vehicle, int road ) {
 		switch (road) {
 		case 1:
-			verticleRoad.addVehicleInLine(direction, vehicle);
+			verticleRoad.addVehicleInQueue(direction, vehicle);
 			break;
 		case 2:
-			horisontalRoad.addVehicleInLine(direction, vehicle);
+			horisontalRoad.addVehicleInQueue(direction, vehicle);
 			break;
 		}
 	}
