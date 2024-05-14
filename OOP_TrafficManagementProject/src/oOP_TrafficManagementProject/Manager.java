@@ -10,7 +10,7 @@ public class Manager {
 	//The addCrossRoad() and methods can be done in a similar manner as my methods below
 	
 	/**
-	 * addRoad()
+	 * addRoad
 	 */
 	public void addRoad() {
 		String roadID = Main.inputStr("Input road ID : ");
@@ -45,7 +45,7 @@ public class Manager {
 			double length = Main.inputDouble("Input car length : ");
 			double width = Main.inputDouble("Input car width : ");
 			double zeroTo100 = Main.inputDouble("Input car 0 to 100 rate : ");
-			municipality.addVehicle(new Vehicle(licensePlate,carModel,length,width,zeroTo100,newDriver));
+			municipality.addVehicle(new Vehicle(licensePlate, carModel, length, width, zeroTo100, newDriver));
 		} else {
 			System.out.println("Vehicle already exist");
 		}

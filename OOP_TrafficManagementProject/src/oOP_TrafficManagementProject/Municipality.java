@@ -123,7 +123,7 @@ public class Municipality {
 		 // search Driver
 		 public int searchDriver(String driverID) {
 			    int i = 0;
-			    while (i < VehicleList.size() && !VehicleList.get(i).getDriver().getDriverID().equalsIgnoreCase(driverID)) {
+			    while (i < VehicleList.size() && !VehicleList.get(i).getDriver().getDriverId().equalsIgnoreCase(driverID)) {
 			        i++;
 			    }
 			    if (i != VehicleList.size()) {
