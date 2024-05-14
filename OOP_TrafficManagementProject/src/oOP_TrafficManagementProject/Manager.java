@@ -7,8 +7,62 @@ public class Manager {
 		municipality = new Municipality (name, maxSpeed, averageDistanceBetweenCars);
 	}
 	
-	//The addCrossRoad() and methods can be done in a similar manner as my methods below
 	
+	public void  addCrossRoad() {
+		Road roadH;
+		Road roadV;
+		TrafficLight trafficLightH;
+		TrafficLight trafficLightV;
+		String crossRoadID = Main.inputStr("Input CrossRoad ID : ");
+		int crossRoadIDpos = municipality.searchCrossRoad(crossRoadID);
+		if(crossRoadIDpos == -1) {
+			String roadID = Main.inputStr("Input horisontal road ID : ");
+			roadH = getRoadLinkedToCrossRoad(roadID);
+			trafficLightH = createTrafficLight();
+			roadID = Main.inputStr("Input vertical road ID : ");
+			while(roadID.equalsIgnoreCase(roadH.getRoadID())) {
+				roadID = Main.inputStr("Input vertical road ID : ");
+			}
+			roadV = getRoadLinkedToCrossRoad(roadID);
+			trafficLightV = createTrafficLight();
+			municipality.addCrossRoad(new CrossRoad(crossRoadID, municipality, new RoadLinkedToCrossRoad(roadV),
+			 new RoadLinkedToCrossRoad(roadH), trafficLightV,
+			trafficLightH));
+		} else {
+			System.out.println("crossRoad already exist");
+		}
+	}
+	
+	/**
+	 * get road linked to cross road
+	 * @param roadID
+	 * @return Road
+	 */
+	public Road getRoadLinkedToCrossRoad(String roadID) {
+		int roadPos = municipality.searchRoad(roadID);
+		if (roadPos == -1) {
+			Road newRoad = new Road(roadID, Main.inputStr("Input road name : "), municipality ,
+					Main.inputDouble("Input road width : "));
+			municipality.addRoad(newRoad);
+			return newRoad;
+		} else {
+			return municipality.getRoadList().get(roadPos);
+		}
+	}
+	
+	/**
+	 * createTrafficLight
+	 * @return TrafficLight
+	 */
+	public TrafficLight createTrafficLight() {
+		String trafficLightId = Main.inputStr("Input TrafficLight ID : ");
+		int trafficLightIdPos = municipality.searchTrafficLight(trafficLightId);
+		if (trafficLightIdPos == -1) {
+			return new TrafficLight(trafficLightId ,  Main.inputStr("Input TrafficLight type : "));
+		} 
+		System.out.println("TrafficLight already exist");
+		return createTrafficLight();
+	}
 	/**
 	 * addRoad
 	 */
@@ -19,7 +73,7 @@ public class Manager {
 			municipality.addRoad(new Road(roadID, Main.inputStr("Input road name : "), municipality ,
 					Main.inputDouble("Input road width : ")));
 		} else {
-			System.out.println("Vehicle already exist");
+			System.out.println("Road already exist");
 		}
 	}
 	/**

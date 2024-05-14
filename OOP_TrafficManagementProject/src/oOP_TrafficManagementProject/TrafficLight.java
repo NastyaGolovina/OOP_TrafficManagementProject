@@ -4,13 +4,13 @@ public class TrafficLight {
 	/**
 	*  instance variables of class
 	*/
-	private int trafficLightId;
+	private String trafficLightId;
 	private String type;
 
 	 /**
 	 * Constructor for objects of class TrafficLight
 	 */
-	public TrafficLight(int trafficLightId , String type)
+	public TrafficLight(String trafficLightId , String type)
 	{
 	this.trafficLightId = trafficLightId;
 	this.type = type;
@@ -18,7 +18,7 @@ public class TrafficLight {
 	/**
 	 * getter method 
 	 */
-	public int getTrafficLightId () {
+	public String getTrafficLightId () {
 	  return trafficLightId;
 	}
 	
@@ -30,7 +30,7 @@ public class TrafficLight {
 	 * @param trafficLightId
 	 *  Setter method
 	 */
-	public void setTrafficLightId (int trafficLightId) {
+	public void setTrafficLightId (String trafficLightId) {
 	this.trafficLightId = trafficLightId;
 	}
 	

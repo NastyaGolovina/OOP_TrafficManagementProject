@@ -155,8 +155,21 @@ public class Municipality {
 			 }
 			 return -1;
 		 } 
-	           
-	           
+	     /**
+	      *      searchTrafficLight 
+	      * @param trafficLightID
+	      * @return i
+	      */
+		 public int searchTrafficLight( String trafficLightID) {
+			 int i = 0;
+			 while (i < CrossRoadList.size() && !CrossRoadList.get(i).getHorisontalTrafficLight().getTrafficLightId().equalsIgnoreCase(trafficLightID)){
+				 i++;
+			 }
+			 if ( i != CrossRoadList.size()) {
+				 return i;
+			 }
+			 return -1;
+		 }       
 	           
 	           
 	           
