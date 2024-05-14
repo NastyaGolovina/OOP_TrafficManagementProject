@@ -40,7 +40,7 @@ public class Manager {
 	 * @param roadID
 	 * @return Road
 	 */
-	public Road getRoadLinkedToCrossRoad(String roadID) {
+	private Road getRoadLinkedToCrossRoad(String roadID) {
 		int roadPos = municipality.searchRoad(roadID);
 		if (roadPos == -1) {
 			Road newRoad = new Road(roadID, Main.inputStr("Input road name : "), municipality ,
@@ -56,7 +56,7 @@ public class Manager {
 	 * createTrafficLight
 	 * @return TrafficLight
 	 */
-	public TrafficLight createTrafficLight() {
+	private TrafficLight createTrafficLight() {
 		String trafficLightId = Main.inputStr("Input TrafficLight ID : ");
 		int trafficLightIdPos = municipality.searchTrafficLight(trafficLightId);
 		if (trafficLightIdPos == -1) {
@@ -81,7 +81,7 @@ public class Manager {
 	/**
 	 * add vehicle
 	 */
-	public void addNewVehicle() {
+	public void addVehicle() {
 		String driverID = Main.inputStr("Input driver ID : ");
 		int drivePos = municipality.searchDriver(driverID);
 		Driver newDriver ;
