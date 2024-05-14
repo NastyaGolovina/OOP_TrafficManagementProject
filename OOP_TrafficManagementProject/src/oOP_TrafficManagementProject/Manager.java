@@ -7,7 +7,9 @@ public class Manager {
 		municipality = new Municipality (name, maxSpeed, averageDistanceBetweenCars);
 	}
 	
-	
+	/**
+	 * addCrossRoad
+	 */
 	public void  addCrossRoad() {
 		Road roadH;
 		Road roadV;
