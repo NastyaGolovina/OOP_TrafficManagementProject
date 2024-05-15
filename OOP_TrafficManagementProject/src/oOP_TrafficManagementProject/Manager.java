@@ -111,8 +111,8 @@ public class Manager {
 	 * add vehicle in queue
 	 */
 	public void addVehicleInQueue() {
-		String vehicleID = Main.inputStr("Input vehicle ID : ");
-		int posVehicle = municipality.searchCrossRoad(vehicleID);
+		String vehicleID = Main.inputStr("Input vehicle license plate : ");
+		int posVehicle = municipality.searchVehicle(vehicleID);
 		if (posVehicle != -1) {
 			String crossRoadID = Main.inputStr("Input Crossroad ID : ");
 			int pos = municipality.searchCrossRoad(crossRoadID);

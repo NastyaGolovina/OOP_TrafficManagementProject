@@ -140,16 +140,16 @@ public class CrossRoad {
 	 * Print types of roads
 	 */
 	public void printRoadDeteils() {
-		System.out.print("(1) - " + verticleRoad);
-		System.out.print("(2) - " + horisontalRoad);
+		System.out.print("/n(1) - " + verticleRoad);
+		System.out.print("/n(2) - " + horisontalRoad + "/n");
 	}
 	
 	/** message conclusion about direction
 	 * 
 	 */
 	public void printDirectionDeteils() {
-		System.out.print("(1) - west-east");
-		System.out.print("(2) - east-west");
+		System.out.print("/n(1) - west-east");
+		System.out.print("/n(2) - east-west" + "/n");
 	}
 	/**
 	 * add given vehicle to queue

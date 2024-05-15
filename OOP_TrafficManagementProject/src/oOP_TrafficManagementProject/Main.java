@@ -29,7 +29,7 @@ public class Main {
             	showDriverMenu();
             	/** Input command **/
             	command = inputInt("Input command : ");
-            	switch(identity) {
+            	switch(command) {
             	case 1:
             		/**Create vehicle**/
             		municipalityManager.addVehicle();
@@ -46,7 +46,7 @@ public class Main {
             	showMunicipalityMenu();
             	/** Input command **/
             	command = inputInt("Input command : ");
-            	switch(identity) {
+            	switch(command) {
             	case 1:
             		/**Add road**/
             		municipalityManager.addRoad();
