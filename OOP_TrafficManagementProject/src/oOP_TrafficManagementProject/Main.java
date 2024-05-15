@@ -74,7 +74,7 @@ public class Main {
 	}
 	
 	/**
-	 * 
+	 * showIdentity
 	 */
 	public static void showIdentity()
 	   {
@@ -85,6 +85,9 @@ public class Main {
 	       System.out.println("******************************");
 	   }
 	
+	/**
+	 * showDriverMenu
+	 */
 	public static void showDriverMenu()
 	   {
 	   	System.out.println("\n******************************");
@@ -92,7 +95,9 @@ public class Main {
 	       System.out.println("(2) - Add my vehicle in queue;");
 	       System.out.println("******************************");
 	   }
-	
+	/**
+	 * showMunicipalityMenu
+	 */
 	public static void showMunicipalityMenu()
 	   {
 	   	System.out.println("\n******************************");
