@@ -31,18 +31,38 @@ public class Main {
             	command = inputInt("Input command : ");
             	switch(identity) {
             	case 1:
-            		
+            		/**Create vehicle**/
+            		municipalityManager.addVehicle();
             	break;
             	case 2:
-                 	
+                 	/**Add my vehicle in queue**/
+            		municipalityManager.addVehicleInQueue();
                 break;
                 default:
                 	System.out.println("Invalid request");
             	}
             	break;
             case 2:
-            	
+            	showMunicipalityMenu();
+            	/** Input command **/
+            	command = inputInt("Input command : ");
+            	switch(identity) {
+            	case 1:
+            		/**Add road**/
+            		municipalityManager.addRoad();
+            	break;
+            	case 2:
+                 	/**Add cross road**/
+            		municipalityManager.addCrossRoad();;
                 break;
+            	case 3:
+                 	/**Show green light duration**/
+            		municipalityManager.showGreenLightDuration(inputStr("Input CrossRoad ID : "));;
+                break;
+                default:
+                	System.out.println("Invalid request");
+            	}
+            	break;
             default:
                 System.out.println("Invalid request");
             } 
@@ -68,18 +88,17 @@ public class Main {
 	public static void showDriverMenu()
 	   {
 	   	System.out.println("\n******************************");
-	       System.out.println("(1) - Create vehicle;");
+	       System.out.println("(1) - Create new vehicle;");
 	       System.out.println("(2) - Add my vehicle in queue;");
 	       System.out.println("******************************");
 	   }
 	
-	public static void showriverMenu()
+	public static void showMunicipalityMenu()
 	   {
 	   	System.out.println("\n******************************");
-	       System.out.println("(1) - Create vehicle;");
-	       System.out.println("(2) - Add my vehicle in queue;");
-	       System.out.println("(3) - Calculate and print the number of Erasmus students;");
-	       System.out.println("(4) - Print the name of international students from a given country;");
+	       System.out.println("(1) - Add road;");
+	       System.out.println("(2) - Add cross road;");
+	       System.out.println("(3) - Show green light duration;");
 	       System.out.println("******************************");
 	   }
 	/**
@@ -122,7 +141,7 @@ public class Main {
      * Input Integer
      * 
      * @param massage which will output during the ask
-     * @return int
+     * @return integer
      */
     public static int inputInt(String message) {
         int line;
