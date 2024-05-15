@@ -5,11 +5,85 @@ import java.util.Scanner;
 public class Main {
 	/** Static variable Scanner **/
 	static Scanner input = new Scanner(System.in);
+	
 	public static void main(String[] args) {	
+		
+		/** Create Manager*/
+		System.out.println("Please create a municipality");
+		Manager municipalityManager = new Manager(inputStr("Input municipality name : "),
+				inputDouble("Input max speed in your municipality : "), 
+				inputDouble("Input average distance between cars in your municipality : "));
+		
+		/** Declare variable*/
+		int command;
+		
+		/** Ask Identity */
+		showIdentity();
+		int identity = inputInt("Input identity : ");
+		
+		
+		
+		while (identity != 0) {
+            switch(identity) {
+            case 1:
+            	showDriverMenu();
+            	/** Input command **/
+            	command = inputInt("Input command : ");
+            	switch(identity) {
+            	case 1:
+            		
+            	break;
+            	 case 2:
+                 	
+                     break;
+                 default:
+                     System.out.println("Invalid request");
+       
+            	
+            	}
+            	break;
+            case 2:
+            	
+                break;
+            default:
+                System.out.println("Invalid request");
+            } 
+            showIdentity();
+            identity = inputInt("Input identity : ");
+        }
+		
 		
 	}
 	
+	/**
+	 * 
+	 */
+	public static void showIdentity()
+	   {
+	   	System.out.println("\n******************************");
+	       System.out.println("(0) - finish");
+	       System.out.println("(1) - Driver;");
+	       System.out.println("(2) - Municipality;");
+	       System.out.println("******************************");
+	   }
 	
+	public static void showDriverMenu()
+	   {
+	   	System.out.println("\n******************************");
+	       System.out.println("(1) - Create vehicle;");
+	       System.out.println("(2) - Add my vehicle in queue;");
+	       System.out.println("******************************");
+	   }
+	
+	public static void showriverMenu()
+	   {
+	   	System.out.println("\n******************************");
+	       System.out.println("(1) - Create vehicle;");
+	       System.out.println("(2) - Add my vehicle in queue;");
+	       System.out.println("(3) - Calculate and print the number of Erasmus students;");
+	       System.out.println("(4) - Print the name of international students from a given country;");
+	       System.out.println("******************************");
+	   }
 	/**
      * Input string
      * 
