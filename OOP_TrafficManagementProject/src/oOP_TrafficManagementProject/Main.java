@@ -33,13 +33,11 @@ public class Main {
             	case 1:
             		
             	break;
-            	 case 2:
+            	case 2:
                  	
-                     break;
-                 default:
-                     System.out.println("Invalid request");
-       
-            	
+                break;
+                default:
+                	System.out.println("Invalid request");
             	}
             	break;
             case 2:
