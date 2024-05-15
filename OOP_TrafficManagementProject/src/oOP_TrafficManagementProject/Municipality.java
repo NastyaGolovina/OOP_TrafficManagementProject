@@ -155,10 +155,11 @@ public class Municipality {
 			 }
 			 return -1;
 		 } 
+		 
 	     /**
-	      *      searchTrafficLight 
+	      * searchTrafficLight 
 	      * @param trafficLightID
-	      * @return i
+	      * @return trafficLight pos
 	      */
 		 public int searchTrafficLight( String trafficLightID) {
 			 int i = 0;
