@@ -95,7 +95,7 @@ public class Road {
 
 	@Override
 	public String toString() {
-		return "Road [roadID=" + roadID + ", roadName=" + roadName + ", municipality=" + municipality + ", width="
+		return "Road [roadID=" + roadID + ", roadName=" + roadName + ", municipality=" + municipality.toString() + ", width="
 				+ width + "]";
 	}
 

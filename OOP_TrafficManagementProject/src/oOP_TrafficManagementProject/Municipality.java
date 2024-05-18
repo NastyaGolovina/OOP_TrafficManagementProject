@@ -144,8 +144,6 @@ public class Municipality {
 		CrossRoadList.add(crossroad);
 	}
 	
-
-
 	
 	/**
 	 * search for driver
@@ -226,8 +224,16 @@ public class Municipality {
 			 return i;
 		 }
 		 return -1;
-	 }       
+	 }
+
+
+	@Override
+	public String toString() {
+		return "Municipality name = " + name + ", maxSpeed = " + maxSpeed + ", averageDistanceBetweenCars = "
+				+ averageDistanceBetweenCars;
+	}       
  
+	 
 	}
 	
 	
