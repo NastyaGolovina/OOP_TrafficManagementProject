@@ -136,7 +136,13 @@ public class RoadLinkedToCrossRoad {
 			return tRightToLeft;
 		}
 	}
-
+	/**
+	 * CleanRoad
+	 */
+	public void CleanRoad() {
+		leftToRightLine.clear();
+		rightToLeftLine.clear();
+	}
 	/**
 	 * display road info
 	 */

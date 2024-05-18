@@ -137,6 +137,8 @@ public class CrossRoad {
 			System.out.println("Second green light : ");
 			System.out.println("Green light time : " + horisontalRoad.returnMinTime(verticleRoad)  + " s ");
 		}
+		verticleRoad.CleanRoad();
+		horisontalRoad.CleanRoad();
 	}
 	/**
 	 * Print types of roads
