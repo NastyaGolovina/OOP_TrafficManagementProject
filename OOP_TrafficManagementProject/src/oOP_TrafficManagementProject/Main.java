@@ -7,6 +7,8 @@ public class Main {
 	static Scanner input = new Scanner(System.in);
 	
 	public static void main(String[] args) {	
+		/** Part to test*/
+//		test_main();
 		
 		/** Create Manager*/
 		System.out.println("Please create a municipality");
@@ -15,7 +17,7 @@ public class Main {
 				inputDouble("Input average distance between cars in your municipality (m) : "));
 		
 		/** Declare variable*/
-		int command;
+		int command; 
 		
 		/** Ask Identity */
 		showIdentity();
@@ -28,7 +30,7 @@ public class Main {
             case 1:
             	showDriverMenu();
             	/** Input command **/
-            	command = inputInt("Input command : ");
+            	command = inputInt("Input command : ");                                         
             	switch(command) {
             	case 1:
             		/**Create vehicle**/
@@ -69,9 +71,64 @@ public class Main {
             showIdentity();
             identity = inputInt("Input identity : ");
         }
-		
-		
 	}
+	
+	/**
+	 *  Part to test
+	 */
+//	public static void test_main()
+//	{
+//		Municipality m = new Municipality("Proto", 50, 0.5);
+//		
+//		Vehicle v1 = new Vehicle("AA-00-BB",
+//								"Opel" , 
+//								2, 
+//								1.5, 
+//								70, 
+//								new Driver("1", "JohnSnow", "DL1", "john@example.com", "90324328"));
+//
+//		Vehicle v2 = new Vehicle("AA-01-BB",
+//				"Opel" , 
+//				2, 
+//				1.5, 
+//				70, 
+//				new Driver("2", "JohnSnow2", "DL2", "john2@example.com", "90324328"));
+//		
+//		Vehicle v3 = new Vehicle("AD-02-BB",
+//				"Opel" , 
+//				2, 
+//				1.5, 
+//				70, 
+//				new Driver("3", "JohnSnow3", "DL3", "john3@example.com", "90324328"));
+//		Vehicle v4 = new Vehicle("AD-03-BB",
+//				"Opel" , 
+//				2, 
+//				1.5, 
+//				70, 
+//				new Driver("4", "JohnSnow4", "DL4", "john4@example.com", "90324328"));
+//		
+//		m.addVehicle(v1);
+//		m.addVehicle(v2);
+//		m.addVehicle(v3);
+//		m.addVehicle(v4);
+//		
+//		CrossRoad cr1 = new CrossRoad("11-22", 
+//										m,
+//										new RoadLinkedToCrossRoad(new Road("1", "roadVertical", m, 4)), 
+//										new RoadLinkedToCrossRoad(new Road("2", "roadHorisontal", m, 4)), 
+//										new TrafficLight("1", "Default"), 
+//										new TrafficLight("2", "Default"));
+//		
+//		m.addCrossRoad(cr1);
+//	
+//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v1, 1);
+//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v2, 2);
+//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v3, 2);
+//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.rightToLeft, v4, 2);
+//		
+//		cr1.printTheRoadAndGreenLightTime();
+//
+//	}
 	
 	/**
 	 * showIdentity

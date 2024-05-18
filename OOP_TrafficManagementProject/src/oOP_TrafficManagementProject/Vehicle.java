@@ -122,13 +122,13 @@ public class Vehicle {
 	 * @return acceleration
 	 */
 	public double accelerationCalc() {
-	    return 100/zeroTo100rate;
+	    return 28/zeroTo100rate;
 	}
 
 	@Override
 	public String toString() {
 		return "licensePlate=" + licensePlate + ", carModel=" + carModel + ", length=" + length + ", width="
-				+ width + ", zeroTo100rate=" + zeroTo100rate + "/n driver=" + driver.toString();
+				+ width + ", zeroTo100rate=" + zeroTo100rate + "\n driver=" + driver.toString();
 	}
 	
 	

@@ -15,26 +15,43 @@ public class TrafficLight {
 	this.trafficLightId = trafficLightId;
 	this.type = type;
 	}
+	
 	/**
 	 * getter method 
+	 */
+	
+	/**
+	 * 
+	 * @returntrafficLightId
 	 */
 	public String getTrafficLightId () {
 	  return trafficLightId;
 	}
-	
+	/**
+	 * 
+	 * @return type
+	 */
 	public String getType () {
 	  return type;
 	}
 	
 	/**
-	 * @param trafficLightId
 	 *  Setter method
+	 */
+	
+	/**
+	 * 
+	 * @param trafficLightId
 	 */
 	public void setTrafficLightId (String trafficLightId) {
 	this.trafficLightId = trafficLightId;
 	}
 	
-	public void setType (String type){
+	/**
+	 * setType
+	 * @param type
+	 */
+	public void setType(String type){
 	 this.type = type;
 	}
 }

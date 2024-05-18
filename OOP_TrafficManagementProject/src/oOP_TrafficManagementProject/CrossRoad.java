@@ -115,7 +115,7 @@ public class CrossRoad {
 	
 	@Override
 	public String toString() {
-		return "CrossRoad [crossRoadId=" + crossRoadId + "]";
+		return "CrossRoad crossRoadId = " + crossRoadId;
 	}
 
 	/**
@@ -127,15 +127,15 @@ public class CrossRoad {
 		double tHorisontal = horisontalRoad.returnMaxTime(verticleRoad);
 		if (tVerticle > tHorisontal) {
 			verticleRoad.display();
-			System.out.println("First green light : ");
+			System.out.println("Green light in " + verticleRoad.getRoad().getRoadName());
 			System.out.println("Green light time : " + tVerticle + " s ");
-			System.out.println("Second green light : ");
-			System.out.println("Green light time : " + verticleRoad.returnMinTime(horisontalRoad)  + " s ");
+			System.out.println("Green light in " + horisontalRoad.getRoad().getRoadName());
+			System.out.println("Green light time : " + tHorisontal  + " s ");
 		} else {
-			System.out.println("First green light : ");
+			System.out.println("Green light in " + horisontalRoad.getRoad().getRoadName());
 			System.out.println("Green light time : " + tHorisontal + " s ");
-			System.out.println("Second green light : ");
-			System.out.println("Green light time : " + horisontalRoad.returnMinTime(verticleRoad)  + " s ");
+			System.out.println("Green light in " + verticleRoad.getRoad().getRoadName());
+			System.out.println("Green light time : " + tVerticle  + " s ");
 		}
 		verticleRoad.CleanRoad();
 		horisontalRoad.CleanRoad();
@@ -148,13 +148,14 @@ public class CrossRoad {
 		System.out.print("\n(2) - " + horisontalRoad.getRoad().getRoadName() + "\n");
 	}
 	
-	/** message conclusion about direction
-	 * 
+	/**
+	 * message conclusion about direction
 	 */
 	public void printDirectionDeteils() {
 		System.out.print("\n(1) - west-east");
 		System.out.print("\n(2) - east-west" + "\n");
 	}
+	
 	/**
 	 * add given vehicle to queue
 	 * @param direction
@@ -162,14 +163,12 @@ public class CrossRoad {
 	 * @param road
 	 */
 	public void addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection direction, Vehicle vehicle, int road ) {
-		switch (road) {
-		case 1:
+		if(road == 1) {
 			verticleRoad.addVehicleInQueue(direction, vehicle);
-			break;
-		case 2:
+		} else {
 			horisontalRoad.addVehicleInQueue(direction, vehicle);
-			break;
 		}
 	}
+
 }
 

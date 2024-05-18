@@ -124,10 +124,10 @@ public class Manager {
 					int roadDirection = Main.inputInt("Input direction : ");
 					if (roadDirection == 1 ) {
 						municipality.getCrossRoadList().get(pos).addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, 
-								municipality.getVehicleList().get(posVehicle), roadDirection);
+								municipality.getVehicleList().get(posVehicle), roadType);
 					} else if (roadDirection == 2 )  {
 						municipality.getCrossRoadList().get(pos).addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.rightToLeft, 
-								municipality.getVehicleList().get(posVehicle), roadDirection);
+								municipality.getVehicleList().get(posVehicle), roadType);
 					} else {
 						System.out.println("Invalid request");
 					}
