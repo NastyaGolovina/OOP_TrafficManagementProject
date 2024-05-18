@@ -18,7 +18,7 @@ public class Municipality {
 	 */
 	public Municipality (String name, double maxSpeed, double averageDistanceBetweenCars) {
       this.name = name;
-      this.maxSpeed = maxSpeed;
+      this.maxSpeed = maxSpeed*0.28;
       this.averageDistanceBetweenCars = averageDistanceBetweenCars;
       VehicleList = new ArrayList<Vehicle>();
       RoadList = new ArrayList<Road>();
@@ -171,31 +171,7 @@ public class Municipality {
 			 }
 			 return -1;
 		 }       
-	           
-	           
-	           
-	           
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		// Lyly, this is an example of search method. Try to do like this, but with your  var.
-//		 int i = 0;
-//	        while ( i < clientsList.size() && !clientsList.get(i).getClienteCode().equalsIgnoreCase(Code)) {
-//	            i++;
-//	        }
-//	        if ( i != clientsList.size()) {
-//	            return i;
-//	        }
-//	        return -1;
-		 
-		 
+ 
 	}
 	
 	

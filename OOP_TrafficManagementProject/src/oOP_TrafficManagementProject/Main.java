@@ -11,8 +11,8 @@ public class Main {
 		/** Create Manager*/
 		System.out.println("Please create a municipality");
 		Manager municipalityManager = new Manager(inputStr("Input municipality name : "),
-				inputDouble("Input max speed in your municipality : "), 
-				inputDouble("Input average distance between cars in your municipality : "));
+				inputDouble("Input max speed in your municipality (km/h) : "), 
+				inputDouble("Input average distance between cars in your municipality (m) : "));
 		
 		/** Declare variable*/
 		int command;

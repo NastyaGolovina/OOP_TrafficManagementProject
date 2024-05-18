@@ -121,7 +121,21 @@ public class RoadLinkedToCrossRoad {
 			return tRightToLeft;
 		}
 	}
-
+	
+	/**
+	 * return minimum value of time in given road
+	 * @param opositeRoad
+	 * @return  the minimum value of time in given road
+	 */
+	public double returnMinTime(RoadLinkedToCrossRoad opositeRoad) {
+		double tLeftToRight = durationCalculation(LineDirection.leftToRight, opositeRoad);
+		double tRightToLeft = durationCalculation(LineDirection.rightToLeft, opositeRoad);
+		if (tLeftToRight < tRightToLeft) {
+			return tLeftToRight;
+		} else {
+			return tRightToLeft;
+		}
+	}
 
 	/**
 	 * display road info

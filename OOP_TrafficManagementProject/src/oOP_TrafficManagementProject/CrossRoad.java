@@ -118,9 +118,6 @@ public class CrossRoad {
 		return "CrossRoad [crossRoadId=" + crossRoadId + "]";
 	}
 
-//	enum Direction {
-//		verticle,horisontal;
-//	}
 	/**
 	 *  determine the road and green light time
 	 */
@@ -130,18 +127,23 @@ public class CrossRoad {
 		double tHorisontal = horisontalRoad.returnMaxTime(verticleRoad);
 		if (tVerticle > tHorisontal) {
 			verticleRoad.display();
+			System.out.println("First green light : ");
 			System.out.println("Green light time : " + tVerticle + " s ");
+			System.out.println("Second green light : ");
+			System.out.println("Green light time : " + verticleRoad.returnMinTime(horisontalRoad)  + " s ");
 		} else {
-			horisontalRoad.display();
+			System.out.println("First green light : ");
 			System.out.println("Green light time : " + tHorisontal + " s ");
+			System.out.println("Second green light : ");
+			System.out.println("Green light time : " + horisontalRoad.returnMinTime(verticleRoad)  + " s ");
 		}
 	}
 	/**
 	 * Print types of roads
 	 */
 	public void printRoadDeteils() {
-		System.out.print("\n(1) - " + verticleRoad);
-		System.out.print("\n(2) - " + horisontalRoad + "\n");
+		System.out.print("\n(1) - " + verticleRoad.getRoad().getRoadName());
+		System.out.print("\n(2) - " + horisontalRoad.getRoad().getRoadName() + "\n");
 	}
 	
 	/** message conclusion about direction

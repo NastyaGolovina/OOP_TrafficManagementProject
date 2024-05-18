@@ -44,7 +44,7 @@ public class Manager {
 		int roadPos = municipality.searchRoad(roadID);
 		if (roadPos == -1) {
 			Road newRoad = new Road(roadID, Main.inputStr("Input road name : "), municipality ,
-					Main.inputDouble("Input road width : "));
+					Main.inputDouble("Input road width (m) : "));
 			municipality.addRoad(newRoad);
 			return newRoad;
 		} else {
@@ -71,9 +71,9 @@ public class Manager {
 	public void addRoad() {
 		String roadID = Main.inputStr("Input road ID : ");
 		int roadPos = municipality.searchRoad(roadID);
-		if(roadPos != -1) {
+		if(roadPos == -1) {
 			municipality.addRoad(new Road(roadID, Main.inputStr("Input road name : "), municipality ,
-					Main.inputDouble("Input road width : ")));
+					Main.inputDouble("Input road width (m): ")));
 		} else {
 			System.out.println("Road already exist");
 		}
@@ -98,9 +98,9 @@ public class Manager {
 		int vehiclePos = municipality.searchVehicle(licensePlate);
 		if(vehiclePos == -1) {
 			String carModel = Main.inputStr("Input car model : ");
-			double length = Main.inputDouble("Input car length : ");
-			double width = Main.inputDouble("Input car width : ");
-			double zeroTo100 = Main.inputDouble("Input car 0 to 100 rate : ");
+			double length = Main.inputDouble("Input car length (m) : ");
+			double width = Main.inputDouble("Input car width (m) : ");
+			double zeroTo100 = Main.inputDouble("Input car 0 to 100 rate (s) : ");
 			municipality.addVehicle(new Vehicle(licensePlate, carModel, length, width, zeroTo100, newDriver));
 		} else {
 			System.out.println("Vehicle already exist");
