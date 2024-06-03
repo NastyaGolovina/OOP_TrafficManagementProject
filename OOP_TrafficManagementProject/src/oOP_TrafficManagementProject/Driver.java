@@ -124,7 +124,20 @@ public class Driver {
 				+ ", email=" + email + ", phone=" + phone;
 	}
 	
-	
-	
+	/**
+	 * printDriverVehicles
+	 */
+	public void printDriverVehicles() {
+		for(Vehicle i : vehicleList) {
+			System.out.println(i);
+		}
+	}
+	/**
+	 * addVihicleInDriver
+	 * @param newVehicle
+	 */
+	public void addVihicleInDriver(Vehicle newVehicle) {
+		vehicleList.add(newVehicle);
+	}
 	
 }
