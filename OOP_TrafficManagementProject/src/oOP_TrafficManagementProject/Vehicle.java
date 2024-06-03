@@ -132,6 +132,11 @@ public class Vehicle {
 	}
 	
 	
+	public String toStringWithoutDriver() {
+		return "licensePlate=" + licensePlate + ", carModel=" + carModel + ", length=" + length + ", width="
+				+ width + ", zeroTo100rate=" + zeroTo100rate;
+	}
+	
 
 
 }

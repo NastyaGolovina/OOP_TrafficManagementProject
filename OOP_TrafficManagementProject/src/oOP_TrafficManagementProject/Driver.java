@@ -9,7 +9,7 @@ public class Driver {
 	private String driverLicense;
 	private String email;
 	private String phone; 
-	private ArrayList<Vehicle> vehicleList; 
+	private ArrayList<Vehicle> vehicleListForDriver; 
 	
 
 	public Driver(String driverId, String driverName, String driverLicense, String email, String phone) {
@@ -18,7 +18,7 @@ public class Driver {
         this.driverLicense = driverLicense;
         this.email = email;
         this.phone = phone;
-        vehicleList = new ArrayList<Vehicle>();
+        vehicleListForDriver = new ArrayList<Vehicle>();
     }
 
 
@@ -101,20 +101,20 @@ public class Driver {
 		this.phone = phone;
 	}
 
-	
+
 	/**
-	 * @return the vehicleList
+	 * @return the vehicleListForDriver
 	 */
-	public ArrayList<Vehicle> getVehicleList() {
-		return vehicleList;
+	public ArrayList<Vehicle> getVehicleListForDriver() {
+		return vehicleListForDriver;
 	}
 
 
 	/**
-	 * @param vehicleList the vehicleList to set
+	 * @param vehicleListForDriver the vehicleListForDriver to set
 	 */
-	public void setVehicleList(ArrayList<Vehicle> vehicleList) {
-		this.vehicleList = vehicleList;
+	public void setVehicleListForDriver(ArrayList<Vehicle> vehicleListForDriver) {
+		this.vehicleListForDriver = vehicleListForDriver;
 	}
 
 
@@ -129,8 +129,10 @@ public class Driver {
 	 */
 	public void printDriverVehicles() {
 		System.out.println("List of vehicles : ");
-		for(Vehicle i : vehicleList) {
-			System.out.println(i);
+		int j = 1;
+		for(Vehicle i : vehicleListForDriver) {
+			System.out.println("("+j+") - " + i.toStringWithoutDriver());
+			j++;
 		}
 	}
 	/**
@@ -138,7 +140,7 @@ public class Driver {
 	 * @param newVehicle
 	 */
 	public void addVihicleInDriver(Vehicle newVehicle) {
-		vehicleList.add(newVehicle);
+		vehicleListForDriver.add(newVehicle);
 	}
 	
 }
