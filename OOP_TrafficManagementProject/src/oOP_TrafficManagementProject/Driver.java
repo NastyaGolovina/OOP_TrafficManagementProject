@@ -128,6 +128,7 @@ public class Driver {
 	 * printDriverVehicles
 	 */
 	public void printDriverVehicles() {
+		System.out.println("List of vehicles : ");
 		for(Vehicle i : vehicleList) {
 			System.out.println(i);
 		}
