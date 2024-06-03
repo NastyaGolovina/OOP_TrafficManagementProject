@@ -1,5 +1,7 @@
 package oOP_TrafficManagementProject;
 
+import java.util.ArrayList;
+
 public class Driver {
 	//Initialization 
 	private String driverId;
@@ -7,6 +9,7 @@ public class Driver {
 	private String driverLicense;
 	private String email;
 	private String phone; 
+	private ArrayList<Vehicle> vehicleList; 
 	
 
 	public Driver(String driverId, String driverName, String driverLicense, String email, String phone) {
@@ -15,6 +18,7 @@ public class Driver {
         this.driverLicense = driverLicense;
         this.email = email;
         this.phone = phone;
+        vehicleList = new ArrayList<Vehicle>();
     }
 
 
@@ -95,6 +99,22 @@ public class Driver {
 	 */
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	
+	/**
+	 * @return the vehicleList
+	 */
+	public ArrayList<Vehicle> getVehicleList() {
+		return vehicleList;
+	}
+
+
+	/**
+	 * @param vehicleList the vehicleList to set
+	 */
+	public void setVehicleList(ArrayList<Vehicle> vehicleList) {
+		this.vehicleList = vehicleList;
 	}
 
 

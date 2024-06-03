@@ -6,6 +6,7 @@ public class Road {
 	private String roadName;
 	private Municipality municipality;
 	private double width;
+	private String type;
 	
 	// Class variable
 	private static int numberOfLines = 2;
@@ -16,11 +17,12 @@ public class Road {
 	 * @param municipality
 	 * @param width
 	 */
-	public Road(String roadID, String roadName, Municipality municipality, double width) {
+	public Road(String roadID, String roadName, Municipality municipality, double width, String type) {
 		this.roadID = roadID;
 		this.roadName = roadName;
 		this.municipality = municipality;
 		this.width = width;
+		this.type = type;
 	}
 
 	/**
@@ -93,10 +95,25 @@ public class Road {
 		Road.numberOfLines = numberOfLines;
 	}
 
+	
+	/**
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
 	@Override
 	public String toString() {
-		return "Road [roadID=" + roadID + ", roadName=" + roadName + ", municipality=" + municipality.toString() + ", width="
-				+ width + "]";
+		return "Road [roadID=" + roadID + ", roadName=" + roadName + ", municipality=" + municipality + ", width="
+				+ width + ", type=" + type + "]";
 	}
 
 	

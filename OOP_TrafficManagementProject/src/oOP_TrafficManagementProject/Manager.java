@@ -44,7 +44,7 @@ public class Manager {
 		int roadPos = municipality.searchRoad(roadID);
 		if (roadPos == -1) {
 			Road newRoad = new Road(roadID, Main.inputStr("Input road name : "), municipality ,
-					Main.inputDouble("Input road width (m) : "));
+					Main.inputDouble("Input road width (m) : "),  Main.inputStr("Input road type : "));
 			municipality.addRoad(newRoad);
 			return newRoad;
 		} else {
@@ -73,7 +73,7 @@ public class Manager {
 		int roadPos = municipality.searchRoad(roadID);
 		if(roadPos == -1) {
 			municipality.addRoad(new Road(roadID, Main.inputStr("Input road name : "), municipality ,
-					Main.inputDouble("Input road width (m): ")));
+					Main.inputDouble("Input road width (m): "), Main.inputStr("Input road type : ")));
 		} else {
 			System.out.println("Road already exist");
 		}
