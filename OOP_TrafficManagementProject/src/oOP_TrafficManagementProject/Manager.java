@@ -189,6 +189,27 @@ public class Manager {
 	}
 	
 	/**
+	 * removeVehicle
+	 */
+	public void removeVehicle() {
+		String driverID = Main.inputStr("Input driver ID : ");
+		int posDriver = municipality.searchDriver(driverID);
+		if (posDriver != -1) {
+			Driver driver = municipality.getVehicleList().get(posDriver).getDriver();
+			driver.printDriverVehicles();
+			int posVehicle = Main.inputInt("Input vehicle pos : ");
+			if(posVehicle >= 1 && posVehicle <= driver.getVehicleListForDriver().size()) {
+				posVehicle -= 1;
+				municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().remove(posVehicle);
+			} else {
+				System.out.println("Vehicle does not exist");
+			}
+		} else {
+			System.out.println("Driver does not exist");
+		}
+	}
+	
+	/**
 	 * show green light duration
 	 * @param crossRoadID id of needed crossRoad
 	 */

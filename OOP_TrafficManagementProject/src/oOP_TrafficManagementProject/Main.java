@@ -40,6 +40,10 @@ public class Main {
                  	/**Add my vehicle in queue**/
             		municipalityManager.addVehicleInQueue();
                 break;
+            	case 3:
+                 	/**Remove vehicle**/
+            		municipalityManager.removeVehicle();
+                break;
                 default:
                 	System.out.println("Invalid request");
             	}
@@ -150,6 +154,7 @@ public class Main {
 	   	System.out.println("\n******************************");
 	       System.out.println("(1) - Create new vehicle;");
 	       System.out.println("(2) - Add my vehicle in queue;");
+	       System.out.println("(3) - Remove vehicle;");
 	       System.out.println("******************************");
 	   }
 	/**
