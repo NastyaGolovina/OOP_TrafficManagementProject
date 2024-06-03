@@ -8,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) {	
 		/** Part to test*/
-//		test_main();
+		//test_main();
 		
 		/** Create Manager*/
 		System.out.println("Please create a municipality");
@@ -114,8 +114,8 @@ public class Main {
 //		
 //		CrossRoad cr1 = new CrossRoad("11-22", 
 //										m,
-//										new RoadLinkedToCrossRoad(new Road("1", "roadVertical", m, 4)), 
-//										new RoadLinkedToCrossRoad(new Road("2", "roadHorisontal", m, 4)), 
+//										new RoadLinkedToCrossRoad(new Road("1", "roadVertical", m, 4, "classic")), 
+//										new RoadLinkedToCrossRoad(new Road("2", "roadHorisontal", m, 4,"twoLine")), 
 //										new TrafficLight("1", "Default"), 
 //										new TrafficLight("2", "Default"));
 //		
