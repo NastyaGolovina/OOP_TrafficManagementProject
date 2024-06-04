@@ -200,7 +200,11 @@ public class Manager {
 			int posVehicle = Main.inputInt("Input vehicle pos : ");
 			if(posVehicle >= 1 && posVehicle <= driver.getVehicleListForDriver().size()) {
 				posVehicle -= 1;
+				String LicensePlate = municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().get(posVehicle).getLicensePlate();
+				int pos = municipality.searchVehicle(LicensePlate);
+				municipality.getVehicleList().remove(pos);
 				municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().remove(posVehicle);
+				
 			} else {
 				System.out.println("Vehicle does not exist");
 			}
