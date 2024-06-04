@@ -44,6 +44,14 @@ public class Main {
                  	/**Remove vehicle**/
             		municipalityManager.removeVehicle();
                 break;
+            	case 4:
+                 	/**Change driver details**/
+            		
+                break;
+            	case 5:
+                 	/**Change vehicle license plate**/
+            		
+                break;
                 default:
                 	System.out.println("Invalid request");
             	}
@@ -59,11 +67,15 @@ public class Main {
             	break;
             	case 2:
                  	/**Add cross road**/
-            		municipalityManager.addCrossRoad();;
+            		municipalityManager.addCrossRoad();
                 break;
             	case 3:
                  	/**Show green light duration**/
-            		municipalityManager.showGreenLightDuration(inputStr("Input CrossRoad ID : "));;
+            		municipalityManager.showGreenLightDuration(inputStr("Input CrossRoad ID : "));
+                break;
+            	case 4:
+                 	/**Change road type**/
+            	
                 break;
                 default:
                 	System.out.println("Invalid request");
@@ -155,6 +167,8 @@ public class Main {
 	       System.out.println("(1) - Create new vehicle;");
 	       System.out.println("(2) - Add my vehicle in queue;");
 	       System.out.println("(3) - Remove vehicle;");
+	       System.out.println("(4) - Change driver details;");
+	       System.out.println("(5) - Change vehicle license plate;");
 	       System.out.println("******************************");
 	   }
 	/**
@@ -166,6 +180,7 @@ public class Main {
 	       System.out.println("(1) - Add road;");
 	       System.out.println("(2) - Add cross road;");
 	       System.out.println("(3) - Show green light duration;");
+	       System.out.println("(4) - Change road type;");
 	       System.out.println("******************************");
 	   }
 	/**

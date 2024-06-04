@@ -113,41 +113,6 @@ public class Manager {
 	/**
 	 * add vehicle in queue
 	 */
-//	public void addVehicleInQueue() {
-//		String vehicleID = Main.inputStr("Input vehicle license plate : ");
-//		int posVehicle = municipality.searchVehicle(vehicleID);
-//		if (posVehicle != -1) {
-//			String crossRoadID = Main.inputStr("Input Crossroad ID : ");
-//			int pos = municipality.searchCrossRoad(crossRoadID);
-//			if (pos != -1) {
-//				municipality.getCrossRoadList().get(pos).printRoadDeteils();
-//				int roadType = Main.inputInt("Input road : ");
-//				if (roadType <= 2) {
-//					municipality.getCrossRoadList().get(pos).printDirectionDeteils();
-//					int roadDirection = Main.inputInt("Input direction : ");
-//					if (roadDirection == 1 ) {
-//						municipality.getCrossRoadList().get(pos).addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, 
-//								municipality.getVehicleList().get(posVehicle), roadType);
-//					} else if (roadDirection == 2 )  {
-//						municipality.getCrossRoadList().get(pos).addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.rightToLeft, 
-//								municipality.getVehicleList().get(posVehicle), roadType);
-//					} else {
-//						System.out.println("Invalid request");
-//					}
-//				} else {
-//					System.out.println("Invalid request");
-//				}		
-//			} else {
-//				System.out.println("CrossRoad does not exist");
-//			}
-//		} else {
-//			System.out.println("Vehicle does not exist");
-//		}
-//	}
-	
-	/**
-	 * add vehicle in queue
-	 */
 	public void addVehicleInQueue() {
 		String driverID = Main.inputStr("Input driver ID : ");
 		int posDriver = municipality.searchDriver(driverID);
