@@ -46,8 +46,8 @@ public class Main {
                 break;
             	case 4:
                  	/**Change driver details**/
-            		
-                break;
+            		municipalityManager.changeDriverDetails();
+;                break;
             	case 5:
                  	/**Change vehicle license plate**/
             		
