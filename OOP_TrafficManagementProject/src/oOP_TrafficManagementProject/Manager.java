@@ -196,7 +196,7 @@ public class Manager {
 	 public void changeRoadDetails() {
 		 String roadId = Main.inputStr("Input Road I'd :");
 		 int posRoad = municipality.searchRoad(roadId);
-		 if (posRoad != -1 ) {
+		 if (posRoad != -1) {
 			 String type =  Main.inputStr("Input Road Type :");
 			 municipality.getRoadList().get(posRoad).setType(type);
 		 }
