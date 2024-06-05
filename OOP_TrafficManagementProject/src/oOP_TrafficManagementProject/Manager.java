@@ -205,7 +205,9 @@ public class Manager {
 		 
 	 }
 	 
-	 
+	 /**
+	  * change driver details
+	  */
 	 public void changeDriverDetails() {
 			
 			String driverID = Main.inputStr("Input the driver ID: ");
@@ -230,7 +232,6 @@ public class Manager {
 						   String newPhone = Main.inputStr("Input new phone number: ");
 						   municipality.getVehicleList().get(posDriver).getDriver().setPhone(newPhone);
 					   break;
-				   
 				   }		      
 			
 			} else {
