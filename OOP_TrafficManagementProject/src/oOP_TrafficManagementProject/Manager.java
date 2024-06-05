@@ -204,5 +204,44 @@ public class Manager {
 		 }
 		 
 	 }
-	
+	 
+	 
+	 public void changeDriverDetails() {
+			
+			String driverID = Main.inputStr("Input the driver ID: ");
+			int posDriver = municipality.searchDriver(driverID);
+
+			if (posDriver != -1) {
+				Driver driver = municipality.getVehicleList().get(posDriver).getDriver();
+				System.out.println(driver);
+				/**
+				 * Ask option
+				 */
+				showOption();
+				int Option = Main.inputInt("Input option to change : ");
+				switch(Option) {
+					   case 1: 
+						   // change email
+						   String newMail = Main.inputStr("Input new mail: ");
+						   municipality.getVehicleList().get(posDriver).getDriver().setEmail(newMail);
+					   break;
+					   case 2:
+						   // change phone
+						   String newPhone = Main.inputStr("Input new phone number: ");
+						   municipality.getVehicleList().get(posDriver).getDriver().setPhone(newPhone);
+					   break;
+				   
+				   }		      
+			
+			} else {
+					System.out.println("Driver doesn't exist");
+				}
+		}
+		
+		public void showOption() {
+		   System.out.println("\n******************************");
+	       System.out.println("(1) - Change email");
+	       System.out.println("(2) - Change phone ;");
+	       System.out.println("*****************************");
+		}
 }
