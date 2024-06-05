@@ -190,6 +190,7 @@ public class Manager {
 			System.out.println("CrossRoad does not exist");
 		}
 	}
+	
 	/**
 	 * Change Road Details  
 	 */
@@ -197,6 +198,7 @@ public class Manager {
 		 String roadId = Main.inputStr("Input Road I'd :");
 		 int posRoad = municipality.searchRoad(roadId);
 		 if (posRoad != -1) {
+			 System.out.println("Old type : " + municipality.getRoadList().get(posRoad).getType());
 			 String type =  Main.inputStr("Input Road Type :");
 			 municipality.getRoadList().get(posRoad).setType(type);
 		 }

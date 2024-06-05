@@ -75,7 +75,7 @@ public class Main {
                 break;
             	case 4:
                  	/**Change road type**/
-            	
+            		municipalityManager.changeRoadDetails();
                 break;
                 default:
                 	System.out.println("Invalid request");
