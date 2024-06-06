@@ -224,12 +224,20 @@ public class Manager {
 					   case 1: 
 						   // change email
 						   String newMail = Main.inputStr("Input new mail: ");
-						   municipality.getVehicleList().get(posDriver).getDriver().setEmail(newMail);
+						   for(Vehicle i : municipality.getVehicleList()) {
+							   if(i.getDriver().getDriverId().equals(driverID)) {
+								   i.getDriver().setEmail(newMail);
+							   }
+						   } 
 					   break;
 					   case 2:
 						   // change phone
 						   String newPhone = Main.inputStr("Input new phone number: ");
-						   municipality.getVehicleList().get(posDriver).getDriver().setPhone(newPhone);
+						   for(Vehicle j : municipality.getVehicleList()) {
+							   if(j.getDriver().getDriverId().equals(driverID)) {
+								   j.getDriver().setPhone(newPhone);
+							   }
+						   }
 					   break;
 				   }		      
 			
