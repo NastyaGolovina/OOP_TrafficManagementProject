@@ -246,6 +246,9 @@ public class Manager {
 				}
 		}
 		
+	 	/**
+		 * showOption
+		 */
 		public void showOption() {
 		   System.out.println("\n******************************");
 	       System.out.println("(1) - Change email");
@@ -253,7 +256,9 @@ public class Manager {
 	       System.out.println("*****************************");
 		}
 		
-		
+		/**
+		 * changeVehicleDetails()
+		 */
 		public void changeVehicleDetails() {
 		    String driverID = Main.inputStr("Input driver ID: ");
 		    int posDriver = municipality.searchDriver(driverID);
