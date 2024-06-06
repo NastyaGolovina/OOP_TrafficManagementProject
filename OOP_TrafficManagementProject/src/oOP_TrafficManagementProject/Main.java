@@ -50,7 +50,7 @@ public class Main {
 ;                break;
             	case 5:
                  	/**Change vehicle license plate**/
-            		
+            		municipalityManager.changeVehicleDetails();
                 break;
                 default:
                 	System.out.println("Invalid request");
