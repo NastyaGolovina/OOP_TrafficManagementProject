@@ -169,7 +169,6 @@ public class Manager {
 				int pos = municipality.searchVehicle(LicensePlate);
 				municipality.getVehicleList().remove(pos);
 				municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().remove(posVehicle);
-				
 			} else {
 				System.out.println("Vehicle does not exist");
 			}
@@ -245,4 +244,32 @@ public class Manager {
 	       System.out.println("(2) - Change phone ;");
 	       System.out.println("*****************************");
 		}
+		
+		
+		public void changeVehicleDetails() {
+		    String driverID = Main.inputStr("Input driver ID: ");
+		    int posDriver = municipality.searchDriver(driverID);
+
+		    if (posDriver != -1) {
+		        Driver driver = municipality.getVehicleList().get(posDriver).getDriver();
+		        driver.printDriverVehicles();
+
+		        int posVehicle = Main.inputInt("Which car? (Enter the position of the car): ");
+		        posVehicle -= 1;
+
+		        if (posVehicle >= 0 && posVehicle < driver.getVehicleListForDriver().size()) {
+		            Vehicle vehicle = driver.getVehicleListForDriver().get(posVehicle);
+
+		            String newLicensePlate = Main.inputStr("Enter new license plate: ");
+		            vehicle.setLicensePlate(newLicensePlate);
+
+		            System.out.println("Vehicle details changed successfully");
+		        } else {
+		            System.out.println("Invalid vehicle position");
+		        }
+		    } else {
+		        System.out.println("Driver not found");
+		    }
+		}
+	
 }
