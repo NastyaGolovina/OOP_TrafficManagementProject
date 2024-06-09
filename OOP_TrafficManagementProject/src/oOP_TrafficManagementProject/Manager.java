@@ -165,10 +165,10 @@ public class Manager {
 			int posVehicle = Main.inputInt("Input vehicle pos : ");
 			if(posVehicle >= 1 && posVehicle <= driver.getVehicleListForDriver().size()) {
 				posVehicle -= 1;
-				String LicensePlate = municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().get(posVehicle).getLicensePlate();
+				String LicensePlate = municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().get(posVehicle).getLicensePlate();		
+				municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().remove(posVehicle);
 				int pos = municipality.searchVehicle(LicensePlate);
 				municipality.getVehicleList().remove(pos);
-				municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().remove(posVehicle);
 			} else {
 				System.out.println("Vehicle does not exist");
 			}
@@ -194,7 +194,7 @@ public class Manager {
 	 * Change Road Details  
 	 */
 	 public void changeRoadDetails() {
-		 String roadId = Main.inputStr("Input Road I'd :");
+		 String roadId = Main.inputStr("Input Road Id :");
 		 int posRoad = municipality.searchRoad(roadId);
 		 if (posRoad != -1) {
 			 System.out.println("Old type : " + municipality.getRoadList().get(posRoad).getType());
@@ -224,28 +224,19 @@ public class Manager {
 					   case 1: 
 						   // change email
 						   String newMail = Main.inputStr("Input new mail: ");
-						   for(Vehicle i : municipality.getVehicleList()) {
-							   if(i.getDriver().getDriverId().equals(driverID)) {
-								   i.getDriver().setEmail(newMail);
-							   }
-						   } 
+						   municipality.getVehicleList().get(posDriver).getDriver().setEmail(newMail);
 					   break;
 					   case 2:
 						   // change phone
 						   String newPhone = Main.inputStr("Input new phone number: ");
-						   for(Vehicle j : municipality.getVehicleList()) {
-							   if(j.getDriver().getDriverId().equals(driverID)) {
-								   j.getDriver().setPhone(newPhone);
-							   }
-						   }
+						   municipality.getVehicleList().get(posDriver).getDriver().setPhone(newPhone);  
 					   break;
 				   }		      
 			
 			} else {
 					System.out.println("Driver doesn't exist");
 				}
-		}
-		
+			}
 	 	/**
 		 * showOption
 		 */

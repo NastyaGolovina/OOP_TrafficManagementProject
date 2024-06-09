@@ -128,14 +128,15 @@ public class CrossRoad {
 		if (tVerticle > tHorisontal) {
 			verticleRoad.display();
 			System.out.println("Green light in " + verticleRoad.getRoad().getRoadName());
-			System.out.println("Green light time : " + tVerticle + " s ");
+			System.out.println("Green light time : " + Math.round(tVerticle * 100.0) / 100.0 + " s ");
 			System.out.println("Green light in " + horisontalRoad.getRoad().getRoadName());
-			System.out.println("Green light time : " + tHorisontal  + " s ");
+			System.out.println("Green light time : " + Math.round(tHorisontal * 100.0) / 100.0  + " s ");
 		} else {
+			horisontalRoad.display();
 			System.out.println("Green light in " + horisontalRoad.getRoad().getRoadName());
-			System.out.println("Green light time : " + tHorisontal + " s ");
+			System.out.println("Green light time : " + Math.round(tHorisontal * 100.0) / 100.0 + " s ");
 			System.out.println("Green light in " + verticleRoad.getRoad().getRoadName());
-			System.out.println("Green light time : " + tVerticle  + " s ");
+			System.out.println("Green light time : " + Math.round(tVerticle * 100.0) / 100.0  + " s ");
 		}
 		verticleRoad.CleanRoad();
 		horisontalRoad.CleanRoad();
