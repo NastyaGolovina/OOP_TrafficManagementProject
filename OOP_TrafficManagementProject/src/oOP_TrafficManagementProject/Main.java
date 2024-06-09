@@ -8,7 +8,7 @@ public class Main {
 	
 	public static void main(String[] args) {	
 		/** Part to test*/
-		//test_main();
+		//Manager municipalityManager = new Manager(test_main());
 		
 		/** Create Manager*/
 		System.out.println("Please create a municipality");
@@ -32,6 +32,8 @@ public class Main {
             	/** Input command **/
             	command = inputInt("Input command : ");                                         
             	switch(command) {
+            	case 0:
+                break;
             	case 1:
             		/**Create vehicle**/
             		municipalityManager.addVehicle();
@@ -69,6 +71,8 @@ public class Main {
             	/** Input command **/
             	command = inputInt("Input command : ");
             	switch(command) {
+            	case 0:
+            	break;
             	case 1:
             		/**Add road**/
             		municipalityManager.addRoad();
@@ -104,57 +108,75 @@ public class Main {
 	/**
 	 *  Part to test
 	 */
-//	public static void test_main()
+//	public static Municipality test_main()
 //	{
 //		Municipality m = new Municipality("Proto", 50, 0.5);
+//		
+//		Driver d1 = new Driver("1", "JohnSnow", "DL1", "john@example.com", "90324328");
 //		
 //		Vehicle v1 = new Vehicle("AA-00-BB",
 //								"Opel" , 
 //								2, 
 //								1.5, 
 //								70, 
-//								new Driver("1", "JohnSnow", "DL1", "john@example.com", "90324328"));
-//
+//								d1);
+//		
+//		d1.addVihicleInDriver(v1);
+//		m.addVehicle(v1);
+//		
+//		Driver d2 = new Driver("2", "JohnSnow2", "DL2", "john2@example.com", "90324328");
+//		
 //		Vehicle v2 = new Vehicle("AA-01-BB",
 //				"Opel" , 
 //				2, 
 //				1.5, 
 //				70, 
-//				new Driver("2", "JohnSnow2", "DL2", "john2@example.com", "90324328"));
+//				d2);
+//		d2.addVihicleInDriver(v2);
+//		m.addVehicle(v2);
 //		
+//		Driver d3 = new Driver("3", "JohnSnow3", "DL3", "john3@example.com", "90324328");
 //		Vehicle v3 = new Vehicle("AD-02-BB",
 //				"Opel" , 
 //				2, 
 //				1.5, 
 //				70, 
-//				new Driver("3", "JohnSnow3", "DL3", "john3@example.com", "90324328"));
+//				d3);
+//		
 //		Vehicle v4 = new Vehicle("AD-03-BB",
 //				"Opel" , 
 //				2, 
 //				1.5, 
 //				70, 
-//				new Driver("4", "JohnSnow4", "DL4", "john4@example.com", "90324328"));
+//				d3);
 //		
-//		m.addVehicle(v1);
-//		m.addVehicle(v2);
+//		d3.addVihicleInDriver(v3);
+//		d3.addVihicleInDriver(v4);
 //		m.addVehicle(v3);
 //		m.addVehicle(v4);
 //		
+//		Road r1 = new Road("1", "Vertical avenue", m, 4, "classic");
+//		Road r2 = new Road("2", "Horisontal street", m, 4,"twoLine");
+//		
+//		m.addRoad(r1);
+//		m.addRoad(r2);
+//		
 //		CrossRoad cr1 = new CrossRoad("11-22", 
 //										m,
-//										new RoadLinkedToCrossRoad(new Road("1", "roadVertical", m, 4, "classic")), 
-//										new RoadLinkedToCrossRoad(new Road("2", "roadHorisontal", m, 4,"twoLine")), 
+//										new RoadLinkedToCrossRoad(r1), 
+//										new RoadLinkedToCrossRoad(r2), 
 //										new TrafficLight("1", "Default"), 
 //										new TrafficLight("2", "Default"));
 //		
 //		m.addCrossRoad(cr1);
 //	
-//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v1, 1);
-//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v2, 2);
-//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v3, 2);
-//		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.rightToLeft, v4, 2);
-//		
-//		cr1.printTheRoadAndGreenLightTime();
+////		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v1, 1);
+////		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v2, 2);
+////		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.leftToRight, v3, 2);
+////		cr1.addVehicleToQueue(RoadLinkedToCrossRoad.LineDirection.rightToLeft, v4, 2);
+////		
+////		cr1.printTheRoadAndGreenLightTime();
+//		return m;
 //
 //	}
 	
@@ -163,8 +185,8 @@ public class Main {
 	 */
 	public static void showIdentity()
 	   {
-	   	System.out.println("\n******************************");
-	       System.out.println("(0) - finish");
+		   System.out.println("\n******************************");
+	       System.out.println("(0) - Exit");
 	       System.out.println("(1) - Driver;");
 	       System.out.println("(2) - Municipality;");
 	       System.out.println("******************************");
@@ -175,7 +197,8 @@ public class Main {
 	 */
 	public static void showDriverMenu()
 	   {
-	   	System.out.println("\n******************************");
+		   System.out.println("\n******************************");
+		   System.out.println("(0) - Exit");
 	       System.out.println("(1) - Create new vehicle;");
 	       System.out.println("(2) - Add my vehicle in queue;");
 	       System.out.println("(3) - Remove vehicle;");
@@ -190,7 +213,8 @@ public class Main {
 	 */
 	public static void showMunicipalityMenu()
 	   {
-	   	System.out.println("\n******************************");
+	   	   System.out.println("\n******************************");
+	   	   System.out.println("(0) - Exit");
 	       System.out.println("(1) - Add road;");
 	       System.out.println("(2) - Add cross road;");
 	       System.out.println("(3) - Show green light duration;");

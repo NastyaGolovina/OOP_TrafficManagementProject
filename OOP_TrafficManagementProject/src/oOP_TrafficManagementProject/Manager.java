@@ -7,6 +7,15 @@ public class Manager {
 		municipality = new Municipality (name, maxSpeed, averageDistanceBetweenCars);
 	}
 	
+	
+	/**
+	 * @param municipality
+	 */
+	public Manager(Municipality municipality) {
+		this.municipality = municipality;
+	}
+
+
 	/**
 	 * addCrossRoad
 	 */
@@ -165,10 +174,24 @@ public class Manager {
 			int posVehicle = Main.inputInt("Input vehicle pos : ");
 			if(posVehicle >= 1 && posVehicle <= driver.getVehicleListForDriver().size()) {
 				posVehicle -= 1;
-				String LicensePlate = municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().get(posVehicle).getLicensePlate();		
-				municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().remove(posVehicle);
-				int pos = municipality.searchVehicle(LicensePlate);
-				municipality.getVehicleList().remove(pos);
+				int delite = 1;
+				if(municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().size() == 1) {
+					System.out.println("This is the last vehicle for this driver. Driver will be removed.\n");
+					delite = Main.inputInt("(1) - yes\n"
+							+ "(2) - no\n"
+							+ "Would you like to continue : \n");
+				}
+				switch (delite) {
+				case 1:
+					String LicensePlate = municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().get(posVehicle).getLicensePlate();		
+					municipality.getVehicleList().get(posDriver).getDriver().getVehicleListForDriver().remove(posVehicle);
+					int pos = municipality.searchVehicle(LicensePlate);
+					municipality.getVehicleList().remove(pos);
+					break;
+				default:
+					 System.out.println("Invalid request");
+					break;
+				}
 			} else {
 				System.out.println("Vehicle does not exist");
 			}
@@ -200,6 +223,8 @@ public class Manager {
 			 System.out.println("Old type : " + municipality.getRoadList().get(posRoad).getType());
 			 String type =  Main.inputStr("Input Road Type :");
 			 municipality.getRoadList().get(posRoad).setType(type);
+		 } else {
+			 System.out.println("Road doesn't exist");
 		 }
 		 
 	 }
@@ -307,7 +332,7 @@ public class Manager {
 	 */
 	public void printRoad(String roadID) {
 		if(municipality.searchRoad(roadID) != -1) {
-			System.out.println(municipality.getVehicleList().get(municipality.searchRoad(roadID)));
+			System.out.println(municipality.getRoadList().get(municipality.searchRoad(roadID)));
 		} else {
 			System.out.println("Road doesn't exist");
 		}
