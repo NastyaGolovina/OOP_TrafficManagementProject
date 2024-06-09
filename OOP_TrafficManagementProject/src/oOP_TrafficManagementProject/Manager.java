@@ -275,5 +275,41 @@ public class Manager {
 		        System.out.println("Driver not found");
 		    }
 		}
+	/**
+	 * 	print driver details
+	 * @param driverID
+	 */
+	public void printDriver(String driverID) {
+		if(municipality.searchDriver(driverID) != -1) {
+			System.out.println(municipality.getVehicleList().get(municipality.searchDriver(driverID)).getDriver());
+			municipality.getVehicleList().get(municipality.searchDriver(driverID)).getDriver().printDriverVehicles();
+		} else {
+			System.out.println("Driver doesn't exist");
+		}
+	}
 	
+	/**
+	 * 	print vehicle details
+	 * @param vehicleID
+	 */
+	public void printVehicle(String vehicleID) {
+		if(municipality.searchVehicle(vehicleID) != -1) {
+			System.out.println(municipality.getVehicleList().get(municipality.searchVehicle(vehicleID)));
+		} else {
+			System.out.println("Vehicle doesn't exist");
+		}
+	}
+	
+	
+	/**
+	 * 	print road details
+	 * @param roadID
+	 */
+	public void printRoad(String roadID) {
+		if(municipality.searchRoad(roadID) != -1) {
+			System.out.println(municipality.getVehicleList().get(municipality.searchRoad(roadID)));
+		} else {
+			System.out.println("Road doesn't exist");
+		}
+	}
 }
